@@ -54,4 +54,17 @@ class SpringDataJpaLearnApplicationTests {
 		Address byId = addressRepository.getById(1);
 		System.out.println("byId = " + byId);
 	}
+
+	@Test
+	public void getEmployeeFromAddress(){
+		Address byId = addressRepository.getById(1);
+		System.out.println(byId.getEmployee().getEmployeeName());
+	}
+
+	@Test
+	public void getAddressfromEmployee(){
+		Employee emp = employeeRepository.getById(1);
+
+		System.out.println(emp.getAddress().getPincode());
+	}
 }
